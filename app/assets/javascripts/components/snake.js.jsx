@@ -73,7 +73,14 @@ class Snake extends React.Component {
 			})
 			setTimeout(function(){ this.moveSnake()}.bind(this), 400)
 		}else{
-		    alert("Game over")
+		    
+		    
+			alert("Game over")
+			this.setState({body: [[8,4],[7,4],[6,4]],
+						current_direction: 'down',
+						bait_position:[9,6]})
+			setTimeout(function(){ this.moveSnake()}.bind(this), 400)
+			
 		}	
 			
 		
