@@ -9,7 +9,7 @@ class Snake extends React.Component {
 		}
 		
 		this.state = {body: [[8,4],[7,4],[6,4]],
-						current_direction: 'up',
+						current_direction: 'down',
 						bait_position:[9,6]}
 		this.onKeyDown = this.onKeyDown.bind(this)
 		this.checkContact = this.checkContact.bind(this)
@@ -24,17 +24,17 @@ class Snake extends React.Component {
 	onKeyDown(e)
 	{
 		
-		if(e.keyCode == 65){
+		if(e.keyCode == 37){
 			this.setState({body: this.state.body, current_direction: 'left'})
 
 		}
-		else if(e.keyCode == 87){
+		else if(e.keyCode == 38){
 			this.setState({body: this.state.body, current_direction: 'up'})
 		}
-		else if(e.keyCode == 83){
+		else if(e.keyCode == 40){
 			this.setState({body: this.state.body, current_direction: 'down'})
 		}
-		else if(e.keyCode == 68){
+		else if(e.keyCode == 39){
 			this.setState({body: this.state.body, current_direction: 'right'})
 		}
 	}
@@ -66,12 +66,12 @@ class Snake extends React.Component {
 		}
 		body[0] = new_head
 
-		if(this.checkContact(new_head)){
+		if(this.checkContact(new_head,body)){
 			this.setState({body: body,
 			   current_direction:this.state.current_direction,
 			   bait_position: this.state.bait_position
 			})
-			setTimeout(function(){ this.moveSnake()}.bind(this), 1000)
+			setTimeout(function(){ this.moveSnake()}.bind(this), 400)
 		}else{
 		    alert("Game over")
 		}	
@@ -80,7 +80,11 @@ class Snake extends React.Component {
 			
 
 	}
-	checkContact() {
+	checkContact(new_head, body) {
+		for(i=1; i< body.length; i++){
+			if(new_head[0] == body[i][0] && new_head[1] == body[i][1])
+				return(false)
+		}
 		return(new_head[0] < this.props.height && new_head[0] > -1 && new_head[1] < this.props.width && new_head[1] > -1)
 	}
 
