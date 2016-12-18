@@ -8,7 +8,7 @@ class Snake extends React.Component {
 			down:[1,0]
 		}
 		
-		this.state = {body: [[8,4],[7,4],[6,4]],
+		this.state = {body: [[5,4],[4,4],[3,4]],
 						current_direction: 'down',
 						bait_position:[9,6]}
 		this.onKeyDown = this.onKeyDown.bind(this)
@@ -76,7 +76,7 @@ class Snake extends React.Component {
 		    
 		    
 			alert("Game over")
-			this.setState({body: [[8,4],[7,4],[6,4]],
+			this.setState({body: [[5,4],[4,4],[3,4]],
 						current_direction: 'down',
 						bait_position:[9,6]})
 			setTimeout(function(){ this.moveSnake()}.bind(this), 400)
@@ -109,7 +109,7 @@ class Snake extends React.Component {
 			body_segment = this.state.body[i]
 			board[body_segment[0]][body_segment[1]] = <Block marked={ true } />
 		}
-		board[this.state.bait_position[0]][this.state.bait_position[1]] = <Block marked={ true } />
+		board[this.state.bait_position[0]][this.state.bait_position[1]] = <Block bait={ true } />
 
 		return(
 			<div className="snake">

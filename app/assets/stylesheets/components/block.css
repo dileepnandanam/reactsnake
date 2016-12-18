@@ -1,9 +1,10 @@
-@media (min-width: 500px) {
+
+
+@media (max-width: 350px){
 	.block {
-		width: 40px;
-		height: 40px;
+		width: 16px;
+		height: 16px;
 		float: left;
-		border:1px solid;
 	}
 }
 @media (min-width: 350px) and (max-width: 500px){
@@ -11,7 +12,6 @@
 		width: 20px;
 		height: 20px;
 		float: left;
-		border:1px solid;
 	}
 }
 @media (min-width: 500px) and (max-width: 640px){
@@ -19,22 +19,22 @@
 		width: 20px;
 		height: 20px;
 		float: left;
-		border:1px solid;
 	}
 }
-@media (min-width: 640px) and (max-width: 680px){
+@media (min-width: 640px) {
 	.block {
 		width: 35px;
 		height: 35px;
 		float: left;
-		border:1px solid;
 	}
 }
-@media (min-width: 680px) and (max-width: 1000px){
-	.block {
-		width: 40px;
-		height: 40px;
-		float: left;
-		border:1px solid;
-	}
+
+.block {
+	background-color: #1d1d19;
+}
+.marked {
+	background-color: #fdd;
+}
+.bait{
+	background-color: #2f8e2f;
 }

@@ -4,8 +4,16 @@ class Block extends React.Component {
 	}
 
 	render() {
+		var blockClass = 'block'
+		if(this.props.bait){
+			blockClass = blockClass + ' ' + 'bait'
+		}
+		if(this.props.marked){
+			blockClass = blockClass + ' ' + 'marked'
+		}
+
 		return(
-			<div className="block" style={ this.props.marked  ? {background: "#000"} : {background: "#edd"} }/>
+			<div className={blockClass} />
 		)
 	}
 }
