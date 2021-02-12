@@ -1,1 +1,2 @@
-This is our old snake game built with react.
+#Snake game in reactjs
+https://dileepnandanam.github.io/react/2016/12/18/snake-game-in-react.html
